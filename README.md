@@ -4,6 +4,15 @@ Interactive slide deck for Brandon Hedge's DevOpsDays Nashville 2026 talk:
 
 **AI Slop Wrangling: Reining In Control When Developers Are Armed With A.I. Slop Cannons**
 
+Official pages:
+
+- Talk and speaker page: https://devopsdays.org/events/2026-nashville/speakers/brandon-hedge/
+- Program abstract: https://devopsdays.org/events/2026-nashville/program/brandon-hedge/
+
+## Abstract
+
+AI coding assistants can accelerate delivery, but unmanaged use can flood teams with plausible code that is hard to trust, review, and operate. This talk frames that risk as an incentive and tooling problem: developers under delivery pressure may reach for more generated output than their systems can safely absorb. The deck focuses on practical controls for narrowing scope, improving review quality, requiring meaningful tests, automating regression checks, instrumenting runtime behavior, and keeping architecture decisions human-led.
+
 The presentation is a Vite + React app with a Tauri desktop wrapper. The talk focuses on the pressure and incentive systems that make AI-assisted development risky, then walks through concrete controls for keeping AI-generated work scoped, testable, observable, and human-owned.
 
 Core thesis:
