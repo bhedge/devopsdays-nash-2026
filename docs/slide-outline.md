@@ -1,318 +1,165 @@
 # DevOpsDays Nashville 2026 Presentation Outline
 
-## Working Metadata
+## Metadata
 
 - Speaker: Brandon Hedge
 - Event: DevOpsDays Nashville 2026
 - Talk title: AI Slop Wrangling: Reining In Control When Developers Are Armed With A.I. Slop Cannons
-- Source pages:
-  - Speaker bio: https://devopsdays.org/events/2026-nashville/speakers/brandon-hedge/
-  - Talk abstract: https://devopsdays.org/events/2026-nashville/program/brandon-hedge/
-- Runtime approach: Vite web UI first, Tauri wrapper later
-- Primary presentation mode: looping motion slides
-- Fallback mode: static themed slide for every motion slide
+- Speaker page: https://devopsdays.org/events/2026-nashville/speakers/brandon-hedge/
+- Program page: https://devopsdays.org/events/2026-nashville/program/brandon-hedge/
+- Runtime: Vite + React slide deck with a Tauri desktop wrapper
 - First slide: blank black
 - Last slide: blank black
 
-## Updated Talk Arc
+## Talk Arc
 
-The deck should be less generic "AI governance" and more specific:
+The deck is focused on AI-assisted development as an incentive, pressure, and operating-control problem.
 
 1. What causes the slop cannon?
 2. Why do otherwise capable developers reach for it?
 3. How do we focus the nozzle instead of banning the tool?
 4. What concrete controls make AI-assisted work safer?
+5. How do teams keep ownership, observability, and architecture human-led?
 
 Core thesis:
 
 > The slop cannon is an incentive problem with a tooling interface. Control the pressure, focus the nozzle, and keep humans responsible for the system.
 
-## Creative Direction
-
-The presentation should stand out without becoming ridiculous. The desired feel is a restrained cyberpunk dystopian engineering environment: black glass, command consoles, amber warnings, cyan telemetry, industrial machinery, damaged code pipelines, and late-night production pressure.
-
-Visual principles:
-
-- Base palette: black, graphite, gunmetal, cold gray.
-- Accents: restrained cyan, amber, and occasional warning red.
-- Texture: scratched glass, dim CRT scanlines, datacenter haze, terminal phosphor, industrial hazard markings.
-- Motion: slow telemetry pulses, drifting diagnostics, controlled glitches, moving scanlines, pipeline flow, status lights.
-- Typography: large direct claims, monospaced system labels, condensed technical supporting text.
-- Avoid: cartoon cannons, loud rainbow neon, generic robots, stock corporate people, cluttered walls of unreadable code.
-
 ## Slide Outline
 
-### 01. Blank Black
+### 01. Blank Start
 
-- Content: Empty black screen before the talk starts.
-- Looped video direction: None.
-- Static fallback: Pure black.
+- ID: `blank-start`
+- Content: Empty black pre-roll slide.
 - Speaker note: Use as the setup state before the talk starts.
 
-### 02. Title
+### 02. AI Slop Wrangling
 
+- ID: `title`
+- Eyebrow: DevOpsDays Nashville 2026
+- Subtitle: Reining In Control When Developers Are Armed With A.I. Slop Cannons
 - Content:
-  - AI Slop Wrangling
-  - Reining In Control When Developers Are Armed With A.I. Slop Cannons
   - Brandon Hedge
-  - DevOpsDays Nashville 2026
-- Looped video direction: A restrained cyberpunk engineering war room with black glass consoles, dim cyan and amber telemetry, pull request diffs, and a stylized slop cannon silhouette aimed at a repo pipeline.
-- Static fallback: Still title card from the same war-room scene with readable typography.
-- Speaker note: AI coding assistants are useful, but unmanaged pressure turns them into high-volume slop cannons.
+- Footer: Control the pressure. Focus the nozzle. Keep humans responsible.
+- Speaker note: Set the premise: AI coding assistants are useful, but unmanaged pressure turns them into high-volume slop cannons.
 
+### 03. About Me
 
-### About Me
+- ID: `about-me`
+- Eyebrow: Context
+- Content:
+  - Nearly 30 years across infrastructure, distributed systems, and engineering leadership.
+  - Neural Payments: AI, data architecture, and PCI security.
+  - Previously CTO at Lineage Bank; Elastic cloud systems; SRE leadership at npm.
+  - I care about resilient systems, usable controls, and teams that can own what they ship.
+- Speaker note: Introduce the perspective: deep infrastructure and leadership experience, current AI and security work in a PCI environment, and a focus on systems teams can actually operate.
 
-B. Hedge is a technologist with nearly 30 years of experience spanning infrastructure, distributed systems, and engineering leadership. He currently works at Neural Payments, where he focuses on Artificial Intelligence, data architecture and security in a PCI environment — including end-to-end PGP encryption of cardholder data and a quantum-proof KMS tokenization solution for PANs.
+### 04. The AI Race Is On
 
-Previously, he served as CTO of Lineage Bank, building out the technical foundation for both traditional banking and banking-as-a-service partnerships. Before that, he led cloud systems engineering at Elastic, managed the SRE team at npm, Inc., and held senior architecture and director-level roles at LeanKit and LifePoint Health.
+- ID: `ai-race`
+- Eyebrow: Market pressure
+- Content:
+  - Move fast.
+  - Ship more code in less time.
+  - Do more with fewer people.
+  - Shorten feature windows until review becomes a bottleneck.
+- Speaker note: Start with the business pressure. Most teams are not adopting AI in a calm lab environment; they are adopting it while the delivery clock is already loud.
 
-His work sits at the intersection of deep technical craft and team leadership, with a long track record of building highly available systems, resilient data pipelines, and cohesive remote teams.
+### 05. The Cannon Gets Loaded Before The Prompt
 
-
-
-### Slide - The AI Race is on
-
-move fast
-ship more code in less time
-do more with less resources
-shortened feature windows
-
-
-### 03. The Cannon Gets Loaded Before The Prompt
-
+- ID: `cannon-loaded`
+- Eyebrow: Root cause
 - Content:
   - Developer fear changes incentives.
   - Teams under pressure optimize for visible output.
   - Reduced staffing makes automation feel mandatory.
   - The result is code volume without matching ownership.
-- Looped video direction: Dark office command floor after a reduction in force: empty desks, glowing task queues, anxious delivery metrics, and an AI console loading generated code into a pipeline.
-- Static fallback: Dystopian delivery dashboard showing fear, pressure, reduced capacity, and output volume as linked signals.
 - Speaker note: Name the human system first. Slop is not only a tooling problem; it is also a pressure and incentive problem.
 
-### 04. Maslow Beats Maturity Models
+### 06. Maslow Beats Maturity Models
 
+- ID: `maslow`
+- Eyebrow: Why capable people overuse it
 - Content:
   - If safety feels threatened, people reach for leverage.
   - AI becomes a way to look productive, responsive, and safe.
   - The behavior is rational, even when the output is risky.
-- Looped video direction: A dark hierarchy diagram rendered as industrial control layers, with safety pulsing amber at the bottom and generated-code telemetry overlaid above it.
-- Static fallback: Maslow-inspired hierarchy mapped to engineering behavior under AI pressure.
-- Speaker note: Connect fear and job security to the temptation to generate more code than the team can understand.
-< show maslows hierarchy of needs >
-describe how the developers are seeing job cuts outside their company or within, and have a need for self preservation. Stay relevant, ship faster, feed the family.
+  - Stay relevant. Ship faster. Feed the family.
+- Speaker note: Connect fear and job security to the temptation to generate more code than the team can understand. Developers may be seeing layoffs inside or outside the company, and self-preservation changes the incentives.
 
-### 05. Slop Looks Useful Until It Compounds
+### 07. Slop Looks Useful Until It Compounds
 
+- ID: `slop-anatomy`
+- Eyebrow: Failure mode
 - Content:
   - Plausible code that nobody really read.
   - Fake-green tests that mirror the implementation.
   - Leaky abstractions and parallel patterns.
   - Dependencies pulled in because they were convenient.
-- Looped video direction: A clean green CI screen glitches to reveal unread code, fake-green tests, abstraction leaks, dependency sprawl, and production risk.
-- Static fallback: Split diagnostic panel with green checks on top and hidden compounding risks underneath.
-- Speaker note: AI slop is dangerous because it presents as progress during casual review.
-LGTM :rocket: code approvals
+  - LGTM approvals that reward volume over understanding.
+- Speaker note: AI slop is dangerous because it presents as progress during casual review. The first pass often looks plausible enough to merge.
 
-### 06. Focus The Nozzle Before You Increase Pressure
+### 08. Focus The Nozzle Before You Increase Pressure
 
+- ID: `focus-nozzle`
+- Eyebrow: Operating principle
 - Content:
   - Define where AI is allowed to work.
   - Constrain the shape of acceptable output.
   - Make feedback fast, local, and objective.
   - Keep humans responsible for architecture.
-- Looped video direction: A heavy industrial nozzle narrows from a chaotic spray of generated code into a controlled beam passing through engineering gates.
-- Static fallback: Controlled-nozzle diagram showing AI output narrowed by rules, tests, architecture, and feedback.
-- Speaker note: Do not ban the tool. Shape its operating envelope.
+- Speaker note: Shift from cause to solution: do not ban the tool. Shape its operating envelope.
 
-### 07. Give The Model A Real Operating Manual
+### 09. Bring Security In Early
 
+- ID: `security-sync`
+- Eyebrow: Security control
 - Content:
-  - Use a strong `CLAUDE.md` or equivalent project guide.
-  - Document architecture, commands, style, testing, and review expectations.
-  - Put sharp boundaries in writing before asking for changes.
-  - Treat prompts as part of engineering governance.
-- Looped video direction: A project rulebook file opens on a dark terminal wall while generated code is redirected through documented commands, architecture boundaries, and review rules.
-- Static fallback: Terminal-style `CLAUDE.md` slide with sections for architecture, commands, tests, style, and forbidden areas.
-- Speaker note: A Karpathy-style project instruction file is a practical way to keep AI output aligned with the repo.
+  - Sync with security before agents write production code.
+  - Agents can leak secrets, choose unsafe packages, or widen permissions.
+  - Scan generated changes like any other supply-chain risk.
+  - Measure repeatedly before cutting into critical systems.
+  - Iterate on tests after every escape.
+- Speaker note: This keeps the security message explicit: AI assistance does not bypass normal risk controls. If anything, it needs more observable gates.
 
+### 10. Be Willing To Write The Small Module
 
-### SLide - Karpathy CLAUDE.md
-Show this text as a document PNG and break into slides:
-
-CLAUDE.md
-Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
-
-Tradeoff: These guidelines bias toward caution over speed. For trivial tasks, use judgment.
-
-1. Think Before Coding
-Don't assume. Don't hide confusion. Surface tradeoffs.
-
-Before implementing:
-
-State your assumptions explicitly. If uncertain, ask.
-If multiple interpretations exist, present them - don't pick silently.
-If a simpler approach exists, say so. Push back when warranted.
-If something is unclear, stop. Name what's confusing. Ask.
-2. Simplicity First
-Minimum code that solves the problem. Nothing speculative.
-
-No features beyond what was asked.
-No abstractions for single-use code.
-No "flexibility" or "configurability" that wasn't requested.
-No error handling for impossible scenarios.
-If you write 200 lines and it could be 50, rewrite it.
-Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
-
-3. Surgical Changes
-Touch only what you must. Clean up only your own mess.
-
-When editing existing code:
-
-Don't "improve" adjacent code, comments, or formatting.
-Don't refactor things that aren't broken.
-Match existing style, even if you'd do it differently.
-If you notice unrelated dead code, mention it - don't delete it.
-When your changes create orphans:
-
-Remove imports/variables/functions that YOUR changes made unused.
-Don't remove pre-existing dead code unless asked.
-The test: Every changed line should trace directly to the user's request.
-
-4. Goal-Driven Execution
-Define success criteria. Loop until verified.
-
-Transform tasks into verifiable goals:
-
-"Add validation" → "Write tests for invalid inputs, then make them pass"
-"Fix the bug" → "Write a test that reproduces it, then make it pass"
-"Refactor X" → "Ensure tests pass before and after"
-For multi-step tasks, state a brief plan:
-
-1. [Step] → verify: [check]
-2. [Step] → verify: [check]
-3. [Step] → verify: [check]
-Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
-
-### Slide - What is an LLM
-- brute force weights randomly trained tokens
-- a pile of numbers
-- statistical inference
-- take only 200 invalid entries to poison a model in an area
-- Ask ChatGPT about goblins
-
-< graphic - show an overview of an LLM model >
-
-### How an LLM reasons
-- it is frightening to look under the hood at thinking and reasoning loops
-- some models are better at certain things
-- try multiple strategies
-
-
-### How to work with an LLM
-- Build my entire website. Make no mistakes. :laughing:
-- Break things into concise bites
-- PLAN. PLAN. PLAN.
-- More text is not always better... clear your context when you change a context
-- A large context can confuse the model
-- 
-
-
-### SLide - Question
-QUESTION: what do you use today? Cursor or other code completion? Claude / Codex? Agents ( API Cost ), Hosted public model, run your own?
-
-
-### WHERE DO YOU START ( slide )
-
-### 08. Pick One Use Case First
-
-- Content:
-  - Start with UI work, not the database.
-  - UI changes are easier to inspect visually.
-  - The blast radius is usually easier to contain.
-  - Feedback loops can be shorter.
-  - Data correctness and migrations need stricter human control.
-- Looped video direction: A UI preview panel is lit cyan while a database core is locked behind amber warning rails. Generated changes route only to the UI lane.
-- Static fallback: Two-lane diagram: UI lane open for AI-assisted work, database lane locked for human-planned changes.
-- Speaker note: Choose an area where mistakes are visible and reversible before letting AI touch deeper system state.
-
-### 09. Write Valid Tests, Not Fake Green
-
-- Content:
-  - Tests should assert important behavior, not implementation trivia.
-  - Generated tests need human review like production code.
-  - Check edge cases, failure modes, and contract boundaries.
-  - Validate that coverage maps to logic that matters.
-- Looped video direction: Test probes move through a system map; fake-green probes stop at shallow paths while valid tests reach critical logic and failure branches.
-- Static fallback: Behavior coverage map separating fake-green tests from meaningful tests.
-- Speaker note: The test question is whether tests would fail for the bugs you actually care about.
-
-### 10. Automate QA And Regression Checks
-
-- Content:
-  - Run checks every time generated output changes the product.
-  - Prefer repeatable browser and API flows over manual vibes.
-  - Capture screenshots, traces, and diffs.
-  - Make regressions visible before review fatigue sets in.
-- Looped video direction: Automated QA scanners sweep a product interface, collecting screenshots, visual diffs, API checks, and regression signals into a review console.
-- Static fallback: QA pipeline diagram showing browser checks, API checks, visual diffs, and review artifacts.
-- Speaker note: Automation should reduce the amount of trust reviewers need to place in generated changes.
-
-### 11. Great Logging Makes Slop Observable
-
-- Content:
-  - Log the decisions that matter.
-  - Expose state transitions and failure reasons.
-  - Trace user journeys through generated code paths.
-  - Use production reality to improve the gates.
-- Looped video direction: A production observability wall shows traces, structured logs, error clusters, and user journeys over a dark network map.
-- Static fallback: Observability dashboard connecting logs, traces, metrics, and generated code paths.
-- Speaker note: You cannot control what you cannot see. Logging is part of making AI-generated work operable.
-
-### 12. Help AI See The UI
-
-- Content:
-  - Give the model structured feedback from the running app.
-  - Use MCP or wrappers around the UI to report DOM state, screenshots, errors, and interactions.
-  - Close the loop between generated code and observed behavior.
-- Looped video direction: An AI workbench receives screenshot, DOM, console error, and interaction telemetry from a running UI, then routes fixes back through tests.
-- Static fallback: Feedback-loop diagram: UI runtime to MCP wrapper to AI assistant to tests to review.
-- Speaker note: If the model only sees files, it guesses. Better feedback helps it correct UI work with evidence.
-
-### 13. Humans Still Own Architecture
-
-- Content:
-  - Plan the work before generating code.
-  - Define module boundaries and contracts.
-  - Sequence changes so review remains possible.
-  - Use AI inside the plan, not instead of the plan.
-- Looped video direction: A human-authored architecture map sits above an automated code pipeline; generated code can move only through approved module boundaries.
-- Static fallback: Architecture-first workflow: plan, boundaries, contracts, generated implementation, review.
-- Speaker note: AI can fill in work, but it should not decide the system shape by accident.
-
-### 14. Be Willing To Write The Small Module
-
+- ID: `write-modules`
+- Eyebrow: Dependency discipline
 - Content:
   - Not every problem needs another package.
   - A simple local module can be easier to audit and own.
   - Generated dependency choices need skepticism.
   - Open source is powerful, but transitive risk is real.
-- Looped video direction: A dependency graph expands into a tangled network, then collapses into one small well-lit local module with clear tests and ownership.
-- Static fallback: Dependency decision panel comparing package pull-in versus local module.
-- Speaker note: Sometimes the safer answer is to write the boring module yourself.
+- Speaker note: AI often reaches for the open source world of code. Sometimes the safer answer is to write the boring module yourself.
 
-### 15. Make Invalid Shapes Harder To Ship
+### 11. Never Give Production Keys To An LLM
 
+- ID: `where-start`
+- Eyebrow: Adoption path
 - Content:
-  - Strong types turn some mistakes into compiler errors.
-  - Go, Rust, and TypeScript give AI tighter rails.
-  - Types do not replace review, but they improve the feedback loop.
-- Looped video direction: Generated code travels through a type-checking grid; malformed shapes are rejected as compiler diagnostics while valid shapes continue to review.
-- Static fallback: Compiler-gate diagram showing type errors catching invalid generated code shapes.
-- Speaker note: A strongly typed language is one more way to focus the nozzle before output reaches production.
+  - Start where mistakes are visible.
+  - Use test credentials, sandboxes, and scoped throwaway tokens.
+  - Keep the data model and production state guarded.
+  - Automate code deployment as the very last step.
+- Speaker note: Be blunt here: the first control is credential discipline. Do not give production secrets or production deployment authority to an LLM while you are still learning the operating model.
 
-### 16. Keep The Velocity. Narrow The Blast Radius.
+### 12. What Are You Using Today?
 
+- ID: `audience-question`
+- Eyebrow: Question
+- Content:
+  - Cursor or code completion?
+  - Claude, Codex, or another coding agent?
+  - Hosted public model?
+  - Private hosted model or local model?
+  - Agents with API budgets?
+- Speaker note: Use this as an interaction beat. It gives you a read on the room before getting into controls.
+
+### 13. Keep The Velocity. Narrow The Blast Radius.
+
+- ID: `operating-model`
+- Eyebrow: Operating model
 - Content:
   - Start with one allowed area.
   - Write the operating manual.
@@ -320,79 +167,288 @@ QUESTION: what do you use today? Cursor or other code completion? Claude / Codex
   - Instrument the runtime.
   - Keep architecture human-led.
   - Improve the controls after every escape.
-- Looped video direction: A control-room runbook updates from unmanaged generation to operated AI delivery while risk indicators stabilize and the nozzle stays focused.
-- Static fallback: Runbook checklist with status indicators for scope, instructions, tests, QA, observability, architecture, and feedback.
-- Speaker note: The answer is not panic or blind trust. It is operated AI delivery.
+- Speaker note: This is the actionable close: the answer is not panic or blind trust. It is operated AI delivery.
 
-### Work toward a multi agent strategy
-- PR Review
-- Security analysis of the pipelines
-- QA regression tests
-- Security white hat agent
-- Documentation hygene
-- Test writer persona who does not trust the code writer persona
-- Automated agens
+### 14. Pick One Use Case First
 
-### Also, Watch your cost
-- AI is not cheaper than humans
-- Frontier models at scale are expensive
-- Hosted private models may provide some capacity for automated agents
-- running your own public model privately has a hardware expense for frontier capabilities ( have you priced GPUs and RAM recently )
-
-
-### Include security
-- Make sure you are in sync with the security team
-- Agents are careless
-- Posting private keys, insecure code, insecure packages
-- Measure 4 times and cut once
-- Iterate on tests
-
-### 17. Closing Thesis
-
+- ID: `pick-ui-first`
+- Eyebrow: Scope control
+- Subtitle: Start with UI work, not the database.
 - Content:
-  - The slop cannon is an incentive problem with a tooling interface.
-  - Control the pressure, focus the nozzle, and keep humans responsible for the system.
-- Looped video direction: The slop cannon powers down into a controlled engineering instrument. A dark pipeline settles into a steady cyan pulse with amber control labels.
-- Static fallback: Large closing thesis over a darkened delivery pipeline with pressure, scope, tests, feedback, and architecture labels.
-- Speaker note: End with both halves: psychological safety and engineering controls.
+  - UI changes are easier to inspect visually.
+  - The blast radius is usually easier to contain.
+  - Feedback loops can be shorter.
+  - Data correctness and migrations need stricter human control.
+- Speaker note: Make adoption incremental. Choose an area where mistakes are visible and reversible before letting AI touch deeper system state.
 
-### 18. Q&A
+### 15. Help AI See The UI
 
+- ID: `ai-sees-ui`
+- Eyebrow: Feedback loop
 - Content:
-  - THANK YOU!
-  - Brandon Hedge
-- Looped video direction: Quiet dystopian terminal idle screen with blinking cursor, slow scanlines, and tiny amber/cyan console indicators.
-- Static fallback: Terminal-style Q&A screen with high contrast readable text.
-- Speaker note: Leave room to add contact details and any conference-required information.
+  - Give the model structured feedback from the running app.
+  - Use MCP or wrappers around the UI to report DOM state, screenshots, errors, and interactions.
+  - Close the loop between generated code and observed behavior.
+- Speaker note: If the model only sees files, it guesses. Better feedback helps it correct UI work with evidence.
 
-### 19. Blank Black
+### 16. Give The Model A Real Operating Manual
 
-- Content: Empty black screen after the talk ends.
-- Looped video direction: None.
-- Static fallback: Pure black.
+- ID: `operating-manual`
+- Eyebrow: Instruction layer
+- Content:
+  - Use a strong CLAUDE.md, AGENTS.md, or equivalent project guide.
+  - Document architecture, commands, style, testing, and review expectations.
+  - Put sharp boundaries in writing before asking for changes.
+  - Treat prompts as part of engineering governance.
+- Speaker note: A Karpathy-style project instruction file is a practical way to keep AI output aligned with the repo.
+
+### 17. Think Before Coding
+
+- ID: `claude-think`
+- Eyebrow: CLAUDE.md
+- Content:
+  - State assumptions explicitly.
+  - If uncertain, ask or name the risk.
+  - Surface tradeoffs instead of picking silently.
+  - Push back when the simpler approach is better.
+- Speaker note: Use this as the first concrete example of turning vague prompting into repo-level operating rules.
+
+### 18. Simplicity First
+
+- ID: `claude-simplicity`
+- Eyebrow: CLAUDE.md
+- Content:
+  - Minimum code that solves the problem.
+  - No speculative features.
+  - No one-use abstractions.
+  - If 200 lines could be 50, rewrite it.
+- Speaker note: This fights one of the most common AI failure modes: turning a narrow request into a framework.
+
+### 19. Surgical Changes
+
+- ID: `claude-surgical`
+- Eyebrow: CLAUDE.md
+- Content:
+  - Touch only what the task requires.
+  - Match the existing style.
+  - Clean up only the mess your change created.
+  - Every changed line should trace to the request.
+- Speaker note: This keeps AI from using every request as permission to refactor the neighborhood.
+
+### 20. Goal-Driven Execution
+
+- ID: `claude-goal-driven`
+- Eyebrow: CLAUDE.md
+- Content:
+  - Define success criteria before changing code.
+  - Turn bugs into failing tests, then fixes.
+  - Verify each step with a concrete check.
+  - Loop independently until the evidence is clean.
+- Speaker note: The goal is not ceremony. Strong success criteria let the assistant work longer without drifting.
+
+### 21. What Is An LLM?
+
+- ID: `what-is-llm`
+- Eyebrow: Mental model
+- Content:
+  - A pile of weights trained to predict tokens.
+  - Statistical inference, not intent.
+  - Powerful pattern matching over enormous context.
+  - Small poisoned or low-quality examples can distort a narrow area.
+- Speaker note: Give the audience a practical mental model. The point is not to dunk on the technology; it is to understand why verification matters.
+
+### 22. How An LLM Reasons
+
+- ID: `llm-reasoning`
+- Eyebrow: Under the hood
+- Content:
+  - Dense models fire next-token completion over billions of parameters per token.
+  - MoE, or mixture of experts, is slightly more efficient.
+  - But LLMs are DUMB!
+- Speaker note: Model reasoning can be useful, but it is not the same as correctness. Treat it as a way to generate candidates that still need checks.
+
+### 23. Plan. Plan. Plan.
+
+- ID: `plan-plan-plan`
+- Eyebrow: Working method
+- Content:
+  - Refine the plan before writing code.
+  - Make sure the assistant understands the codebase.
+  - Anchor the work in established patterns.
+  - Then write the smallest code that satisfies the plan.
+- Speaker note: Slow the assistant down before implementation. A better plan is cheaper than reviewing a confident patch that misunderstood the system.
+
+### 24. Work In Concise Bites
+
+- ID: `work-with-llm`
+- Eyebrow: Working method
+- Content:
+  - Do not ask for the whole system in one breath.
+  - Plan the task. Then plan the verification.
+  - Clear context when the problem changes.
+  - Large context helps until it starts confusing the model.
+- Speaker note: Make the practical point: better work units produce better output. More text is not automatically better context.
+
+### 25. Write Valid Tests, Not Fake Green
+
+- ID: `valid-tests`
+- Eyebrow: Proof layer
+- Content:
+  - Tests should assert important behavior, not implementation trivia.
+  - Generated tests need human review like production code.
+  - Check edge cases, failure modes, and contract boundaries.
+  - Validate that coverage maps to logic that matters.
+- Speaker note: The test question is not whether tests exist. It is whether they would fail for the bugs you actually care about.
+
+### 26. There Is No Excuse Not To Write Tests Any Longer
+
+- ID: `qa-regression`
+- Eyebrow: Verification layer
+- Content:
+  - Run checks every time generated output changes the product.
+  - Prefer repeatable browser and API flows over manual vibes.
+  - Capture screenshots, traces, and diffs.
+  - Make regressions visible before review fatigue sets in.
+- Speaker note: Automation should reduce the amount of trust reviewers need to place in generated changes.
+
+### 27. Review And Shipping Become The Bottleneck
+
+- ID: `review-bottleneck`
+- Eyebrow: Flow control
+- Content:
+  - AI can generate changes faster than teams can understand them.
+  - PR review and release queues become the constraint.
+  - Stacking more work on the bottleneck only increases risk.
+  - Focus on precision, refinement, observability, tooling, and automation.
+- Speaker note: Make the capacity point explicit: when generation gets cheap, human review and shipping discipline become the limiting system. Do not just pile more work into that queue.
+
+### 28. Humans Still Run And Use The Software
+
+- ID: `release-gates`
+- Eyebrow: Release control
+- Content:
+  - Control the release gates.
+  - Keep a strong QA and staging test gate.
+  - Do not be afraid to reject code.
+  - Use A/B testing where it fits.
+  - Monitor error rates and establish an error budget.
+  - Be sure you can rollback the code easily.
+  - Developers need to be on call for their slop.
+- Speaker note: The software is still used by real people and operated by real teams. Reject bad code, measure production impact, and keep ownership attached to the people shipping the change.
+
+### 29. Great Logging Makes Slop Observable
+
+- ID: `logging-observability`
+- Eyebrow: Runtime feedback
+- Content:
+  - Log the decisions that matter.
+  - Expose state transitions and failure reasons.
+  - Trace user journeys through generated code paths.
+  - Use production reality to improve the gates.
+- Speaker note: You cannot control what you cannot see. Logging is part of making AI-generated work operable.
+
+### 30. Make Invalid Shapes Harder To Ship
+
+- ID: `typed-languages`
+- Eyebrow: Constraint layer
+- Content:
+  - Strong types turn some mistakes into compiler errors.
+  - Go, Rust, and TypeScript give AI tighter rails.
+  - Types do not replace review, but they improve the feedback loop.
+- Speaker note: A strongly typed language is one more way to focus the nozzle before output reaches production.
+
+### 31. Work Toward A Multi-Agent Strategy
+
+- ID: `multi-agent`
+- Eyebrow: Scale pattern
+- Content:
+  - PR review and skeptical test writing.
+  - QA regression checks with artifacts.
+  - Pipeline and dependency security analysis.
+  - Documentation hygiene.
+  - Agents need roles, budgets, and gates.
+- Speaker note: This is where teams can go after the basic controls work: separate personas for separate jobs, with one agent not blindly trusting another.
+
+### 32. Watch Your Cost
+
+- ID: `cost`
+- Eyebrow: Budget control
+- Content:
+  - AI is not automatically cheaper than humans.
+  - Frontier models at scale are expensive.
+  - Private hosted models shift cost into capacity planning.
+  - Local models shift cost into hardware and operations.
+  - Measure tokens, retries, agent fan-out, and review time.
+- Speaker note: Bring the budget reality into the room. Automated agents can produce useful work, but uncontrolled loops and fan-out can become expensive fast.
+
+### 33. The Pressure Is Real
+
+- ID: `summary-pressure`
+- Eyebrow: Summary
+- Content:
+  - Business velocity is rising.
+  - Developer safety concerns change incentives.
+  - Code volume can increase faster than ownership.
+  - The problem starts before the prompt.
+- Speaker note: Restate the root cause before closing: this is not just a model-quality issue. It is pressure moving through a tooling interface.
+
+### 34. Control The Operating Envelope
+
+- ID: `summary-controls`
+- Eyebrow: Summary
+- Content:
+  - Protect secrets and production authority.
+  - Start with visible, reversible work.
+  - Use project instructions, tests, types, and security gates.
+  - Make the model see evidence, not vibes.
+- Speaker note: This is the pragmatic control stack. We are not banning the tool; we are defining where and how it can safely operate.
+
+### 35. Operate AI Delivery Like A System
+
+- ID: `summary-operation`
+- Eyebrow: Summary
+- Content:
+  - PR review and shipping are capacity constraints.
+  - Invest in precision, refinement, tooling, and automation.
+  - Instrument generated paths in production.
+  - Keep architecture and accountability human-led.
+- Speaker note: Make the final transition: once generation is cheap, operations discipline matters more. The team still owns the system.
+
+### 36. Humans Still Own Architecture
+
+- ID: `human-architecture`
+- Eyebrow: Human responsibility
+- Content:
+  - Plan the work before generating code.
+  - Define module boundaries and contracts.
+  - Sequence changes so review remains possible.
+  - Use AI inside the plan, not instead of the plan.
+- Speaker note: AI can fill in work, but it should not decide the system shape by accident.
+
+### 37. The Slop Cannon Is An Incentive Problem With A Tooling Interface
+
+- ID: `closing-thesis`
+- Eyebrow: Closing thesis
+- Subtitle: Control the pressure, focus the nozzle, and keep humans responsible for the system.
+- Content:
+  - Pressure
+  - Scope
+  - Tests
+  - Feedback
+  - Architecture
+- Speaker note: End with the core point: teams need both psychological safety and engineering controls.
+
+### 38. Thank You
+
+- ID: `qa`
+- Eyebrow: DevOpsDays Nashville 2026
+- Subtitle: Brandon Hedge
+- Content:
+  - Questions
+- Speaker note: Leave room to add contact details, a QR code, or conference-required information.
+
+### 39. Blank End
+
+- ID: `blank-end`
+- Content: Empty black post-talk slide.
 - Speaker note: Use as the post-talk state when exiting presentation mode.
-
-## Static Fallback Requirements
-
-- Same text hierarchy as the animated slide.
-- Same palette and composition as the video direction.
-- No essential information should exist only in motion.
-- Each fallback should be legible at conference-room projection distance.
-- Static assets should be loadable without network access inside the Tauri app.
-
-## Candidate Concept Images
-
-These are the first image targets to generate once the direction is ready:
-
-1. Title concept: cyberpunk engineering war room with slop cannon silhouette and PR telemetry.
-2. Root-cause concept: pressure dashboard connecting fear, reduced capacity, output volume, and review risk.
-3. Focus-the-nozzle concept: industrial nozzle turning chaotic generated code into controlled output.
-4. UI-feedback concept: running UI connected to MCP-style feedback loop.
-
-## Open Questions
-
-- Talk length and expected slide count.
-- Whether to include real code examples or keep the examples conceptual.
-- Which contact links or QR code should appear on the Q&A slide.
-- Whether to include specific tool recommendations by name.
-- Whether the Tauri app should support presenter notes, timer, keyboard navigation, and a slide overview.
