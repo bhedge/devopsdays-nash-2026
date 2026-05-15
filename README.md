@@ -93,3 +93,11 @@ https://github.com/bhedge/devops-days-presentation/releases/tag/v0.1.0
 - Slide content and talk planning live in `docs/slide-outline.md`.
 - Runtime presentation data lives in `src/slides.ts`.
 - The project-specific AI coding guidance lives in `CLAUDE.md`.
+
+## Public Releases
+
+Download desktop builds from:
+
+```text
+https://github.com/bhedge/devopsdays-nash-2026/releases
+```
