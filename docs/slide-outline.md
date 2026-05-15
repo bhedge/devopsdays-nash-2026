@@ -60,6 +60,25 @@ Visual principles:
 - Static fallback: Still title card from the same war-room scene with readable typography.
 - Speaker note: AI coding assistants are useful, but unmanaged pressure turns them into high-volume slop cannons.
 
+
+### About Me
+
+B. Hedge is a technologist with nearly 30 years of experience spanning infrastructure, distributed systems, and engineering leadership. He currently works at Neural Payments, where he focuses on Artificial Intelligence, data architecture and security in a PCI environment — including end-to-end PGP encryption of cardholder data and a quantum-proof KMS tokenization solution for PANs.
+
+Previously, he served as CTO of Lineage Bank, building out the technical foundation for both traditional banking and banking-as-a-service partnerships. Before that, he led cloud systems engineering at Elastic, managed the SRE team at npm, Inc., and held senior architecture and director-level roles at LeanKit and LifePoint Health.
+
+His work sits at the intersection of deep technical craft and team leadership, with a long track record of building highly available systems, resilient data pipelines, and cohesive remote teams.
+
+
+
+### Slide - The AI Race is on
+
+move fast
+ship more code in less time
+do more with less resources
+shortened feature windows
+
+
 ### 03. The Cannon Gets Loaded Before The Prompt
 
 - Content:
@@ -80,6 +99,8 @@ Visual principles:
 - Looped video direction: A dark hierarchy diagram rendered as industrial control layers, with safety pulsing amber at the bottom and generated-code telemetry overlaid above it.
 - Static fallback: Maslow-inspired hierarchy mapped to engineering behavior under AI pressure.
 - Speaker note: Connect fear and job security to the temptation to generate more code than the team can understand.
+< show maslows hierarchy of needs >
+describe how the developers are seeing job cuts outside their company or within, and have a need for self preservation. Stay relevant, ship faster, feed the family.
 
 ### 05. Slop Looks Useful Until It Compounds
 
@@ -91,6 +112,7 @@ Visual principles:
 - Looped video direction: A clean green CI screen glitches to reveal unread code, fake-green tests, abstraction leaks, dependency sprawl, and production risk.
 - Static fallback: Split diagnostic panel with green checks on top and hidden compounding risks underneath.
 - Speaker note: AI slop is dangerous because it presents as progress during casual review.
+LGTM :rocket: code approvals
 
 ### 06. Focus The Nozzle Before You Increase Pressure
 
@@ -113,6 +135,94 @@ Visual principles:
 - Looped video direction: A project rulebook file opens on a dark terminal wall while generated code is redirected through documented commands, architecture boundaries, and review rules.
 - Static fallback: Terminal-style `CLAUDE.md` slide with sections for architecture, commands, tests, style, and forbidden areas.
 - Speaker note: A Karpathy-style project instruction file is a practical way to keep AI output aligned with the repo.
+
+
+### SLide - Karpathy CLAUDE.md
+Show this text as a document PNG and break into slides:
+
+CLAUDE.md
+Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
+
+Tradeoff: These guidelines bias toward caution over speed. For trivial tasks, use judgment.
+
+1. Think Before Coding
+Don't assume. Don't hide confusion. Surface tradeoffs.
+
+Before implementing:
+
+State your assumptions explicitly. If uncertain, ask.
+If multiple interpretations exist, present them - don't pick silently.
+If a simpler approach exists, say so. Push back when warranted.
+If something is unclear, stop. Name what's confusing. Ask.
+2. Simplicity First
+Minimum code that solves the problem. Nothing speculative.
+
+No features beyond what was asked.
+No abstractions for single-use code.
+No "flexibility" or "configurability" that wasn't requested.
+No error handling for impossible scenarios.
+If you write 200 lines and it could be 50, rewrite it.
+Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+
+3. Surgical Changes
+Touch only what you must. Clean up only your own mess.
+
+When editing existing code:
+
+Don't "improve" adjacent code, comments, or formatting.
+Don't refactor things that aren't broken.
+Match existing style, even if you'd do it differently.
+If you notice unrelated dead code, mention it - don't delete it.
+When your changes create orphans:
+
+Remove imports/variables/functions that YOUR changes made unused.
+Don't remove pre-existing dead code unless asked.
+The test: Every changed line should trace directly to the user's request.
+
+4. Goal-Driven Execution
+Define success criteria. Loop until verified.
+
+Transform tasks into verifiable goals:
+
+"Add validation" → "Write tests for invalid inputs, then make them pass"
+"Fix the bug" → "Write a test that reproduces it, then make it pass"
+"Refactor X" → "Ensure tests pass before and after"
+For multi-step tasks, state a brief plan:
+
+1. [Step] → verify: [check]
+2. [Step] → verify: [check]
+3. [Step] → verify: [check]
+Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
+
+### Slide - What is an LLM
+- brute force weights randomly trained tokens
+- a pile of numbers
+- statistical inference
+- take only 200 invalid entries to poison a model in an area
+- Ask ChatGPT about goblins
+
+< graphic - show an overview of an LLM model >
+
+### How an LLM reasons
+- it is frightening to look under the hood at thinking and reasoning loops
+- some models are better at certain things
+- try multiple strategies
+
+
+### How to work with an LLM
+- Build my entire website. Make no mistakes. :laughing:
+- Break things into concise bites
+- PLAN. PLAN. PLAN.
+- More text is not always better... clear your context when you change a context
+- A large context can confuse the model
+- 
+
+
+### SLide - Question
+QUESTION: what do you use today? Cursor or other code completion? Claude / Codex? Agents ( API Cost ), Hosted public model, run your own?
+
+
+### WHERE DO YOU START ( slide )
 
 ### 08. Pick One Use Case First
 
@@ -214,6 +324,29 @@ Visual principles:
 - Static fallback: Runbook checklist with status indicators for scope, instructions, tests, QA, observability, architecture, and feedback.
 - Speaker note: The answer is not panic or blind trust. It is operated AI delivery.
 
+### Work toward a multi agent strategy
+- PR Review
+- Security analysis of the pipelines
+- QA regression tests
+- Security white hat agent
+- Documentation hygene
+- Test writer persona who does not trust the code writer persona
+- Automated agens
+
+### Also, Watch your cost
+- AI is not cheaper than humans
+- Frontier models at scale are expensive
+- Hosted private models may provide some capacity for automated agents
+- running your own public model privately has a hardware expense for frontier capabilities ( have you priced GPUs and RAM recently )
+
+
+### Include security
+- Make sure you are in sync with the security team
+- Agents are careless
+- Posting private keys, insecure code, insecure packages
+- Measure 4 times and cut once
+- Iterate on tests
+
 ### 17. Closing Thesis
 
 - Content:
@@ -226,9 +359,8 @@ Visual principles:
 ### 18. Q&A
 
 - Content:
-  - Questions
+  - THANK YOU!
   - Brandon Hedge
-  - Optional contact links or QR code to repo/slides
 - Looped video direction: Quiet dystopian terminal idle screen with blinking cursor, slow scanlines, and tiny amber/cyan console indicators.
 - Static fallback: Terminal-style Q&A screen with high contrast readable text.
 - Speaker note: Leave room to add contact details and any conference-required information.
